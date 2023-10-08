@@ -1,20 +1,21 @@
+import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,TouchableOpacity,ImageBackground,SafeAreaView  } from 'react-native';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import HomeStack from './components/Home/HomeStack';
+import LoginStack from './components/Login/LoginStack';
+import { NavigationContainer } from '@react-navigation/native';
+import { ExerciceProvider } from './components/Home/ExerciceContext'
+;
+const image = {uri: 'https://legacy.reactjs.org/logo-og.png'};
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ExerciceProvider>
+      <NavigationContainer>
+        <HomeStack/>
+      </NavigationContainer>
+    </ExerciceProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
