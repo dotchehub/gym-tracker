@@ -4,12 +4,13 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import Profil from "../Profil/Profil";
 import Progress from "../Home/Progress";
-import Login from "../Login/Login";
+
 import WorkoutHistory from "../Home/WorkoutHistory";
 import TrainingTabNavigator from "../Home/TrainingTabNavigator";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import Workout from "../Home/Workout";
 import ItsYourBirthday from "../Home/Text";
+import AllExercice from "../Home/AllExercice";
 
 
 const Tab = createBottomTabNavigator();
@@ -47,7 +48,7 @@ const Menu = ({navigation}) => {
       />
         <Tab.Screen
         name="Exercices"
-        component={ItsYourBirthday}
+        component={AllExercice}
         options={{
             
         }}

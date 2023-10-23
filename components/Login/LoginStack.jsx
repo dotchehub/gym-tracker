@@ -1,30 +1,37 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import Login from './Login';
-
-import Menu from '../Menu/Menu';
+import NotLoggedScreen from './NotLoggedScreen';
+import LoginScreen from './LoginScreen';
+import SingInScreen from './SingInScreen';
 
 const Stack = createStackNavigator();
 
 function LoginStack() {
   return (
-    <Stack.Navigator initialRouteName="Login" >
+    <Stack.Navigator initialRouteName="NotLoggedScreen" >
         <Stack.Screen
-            name="Login" 
-            component={Login}
+            name="NotLoggedScreen" 
+            component={NotLoggedScreen}
             options={{
                 title: "Créer un compte",
                 headerShown: false,
             }} 
         />
         <Stack.Screen
-            name="Home" 
-            component={Menu}
+            name='LoginScreen'
+            component={LoginScreen}
             options={{
-                title: "Créer un compte",
-                headerShown: false,
-            }} 
+              title:"S'inscrire",
+              headerShown: false,
+            }}
         />
-
+        <Stack.Screen
+            name='SingInScreen'
+            component={SingInScreen}
+            options={{
+              title:"Se connecter",
+              headerShown: false,
+            }}
+        />
     </Stack.Navigator>
   );
 }

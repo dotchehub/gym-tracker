@@ -1,32 +1,34 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,TouchableOpacity,ImageBackground,SafeAreaView  } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { useAuth } from '../Home/AuthContext';
 
 import { NavigationContainer } from '@react-navigation/native';
 const image = {uri: 'https://legacy.reactjs.org/logo-og.png'};
 
 export default function Login({ navigation,name,setName }) {
+    const {login} = useAuth();
     return (
           <ImageBackground source={require('../../images/img1.jpeg')} resizeMode="cover" style={styles.image}>
             <View style={styles.mainView}>
               <View>
                   <Text style={styles.title}>
-                    Sign In 
+                    STREEG
                   </Text>
                   <Text style={{color:'white'}}>
-                    Track Your Performance,{"\n"}
-                    Smash Your Goals!
+                    Suivez vos performances,,{"\n"}
+                    Atteignez vos objectifs!
                   </Text>
               </View>
               <View style={styles.connexionButtons}>
-                <TouchableOpacity style={styles.appleConnexion} >
+                <TouchableOpacity style={styles.appleConnexion} onPress={()=>navigation.navigate("SingInScreen")} >
                   <Text>
-                    Continue with Apple
+                    Se connecter
                   </Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.emailConnexion} onPress={()=>navigation.navigate('Home')} >
+                <TouchableOpacity style={styles.emailConnexion} onPress={()=>navigation.navigate("LoginScreen")} >
                   <Text style={{color:'white'}}>
-                    <Ionicons name=""/> Continue with Email
+                    <Ionicons name=""/> S'inscrire
                   </Text>
                 </TouchableOpacity>
               </View>  

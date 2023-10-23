@@ -31,6 +31,7 @@ const ExerciceStack = ({ navigation }) =>{
         component={ExerciceInfo}
         options={{
           headerShown:false,
+         
         }}
       />
        <Stack.Screen

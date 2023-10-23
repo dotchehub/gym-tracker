@@ -112,7 +112,7 @@ const ListExercice = ({ navigation, route }) => {
                 >
                   <Text>{item.name}</Text>
                   <Ionicons
-                    onPress={()=>{toggleModal(); setSelectedExercice(item)}}
+                    onPress={()=>{ navigation.navigate('ExerciceInfo',{exercice:item})}}
                     name="information-circle-outline"
                     color={"#A6A6A6"}
                     size={30}
@@ -128,7 +128,7 @@ const ListExercice = ({ navigation, route }) => {
       }
       
       </View>
-      <ExerciceInfo toggleModal={toggleModal} exercice={selectedExercice} isModalVisible={isModalVisible}/>
+      
     </SafeAreaView>
   );
 };
